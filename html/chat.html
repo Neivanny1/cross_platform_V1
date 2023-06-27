@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maseno CrossPlatform</title>
+</head>
+<body>
+    <!-- HTML code for the chat forum -->
+<div id="chat-container">
+    <div id="chat-header">
+      Chat Forum
+    </div>
+    <div id="chat-messages">
+      <!-- Chat messages will be displayed here -->
+    </div>
+    <div id="chat-input">
+      <form id="chat-form">
+        <input type="text" id="chat-message" placeholder="Enter your message here">
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- JavaScript code for handling chat messages -->
+  <script>
+    // Get references to the chat container, form, and input field
+    const chatContainer = document.getElementById('chat-container');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-message');
+  
+    // Handle form submission
+    chatForm.addEventListener('submit', event => {
+      event.preventDefault(); // prevent the form from reloading the page
+  
+      // Get the message from the input field
+      const message = chatInput.value;
+  
+      // Clear the input field
+      chatInput.value = '';
+  
+      // Create a new message element and append it to the chat messages container
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('chat-message');
+      messageElement.textContent = message;
+      document.getElementById('chat-messages').appendChild(messageElement);
+    });
+  </script>
+</body>
+</html>
